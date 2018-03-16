@@ -1,0 +1,25 @@
+{
+  "name": "caradisiac",
+  "version": "1.0.0",
+  "description": "> Drive comfortably",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArthurThomasset/caradisiac.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArthurThomasset/caradisiac/issues"
+  },
+  "homepage": "https://github.com/ArthurThomasset/caradisiac#readme",
+  "dependencies": {
+    "node-car-api": "git+https://github.com/92bondstreet/node-car-api.git"
+  }
+}
