@@ -1,10 +1,8 @@
-/*var elasticsearch = require('elasticsearch');
-var client = new elasticsearch.Client({
-  host: 'localhost:9200',
-  log: 'trace'
-}); */
+
 var fs =require('fs');
-var Brands;
+var Brands =[];
+
+var essai = ["ABARTH","AIXAM","ALFA ROMEO","ALPINA","ALPINE","ARO","ASTON MARTIN","AUDI","BENTLEY","BMW","BOLLORE","BOOXT","BUGATTI","BURBY S","CADILLAC","CATERHAM","CHATENET","CHEVROLET","CHRYSLER","CITROEN","COURB","DACIA","DAEWOO","DAIHATSU","DE TOMASO","DODGE","DONKERVOORT","DS","ELV","ESTRIMA","FAM AUTOMOBILES","FERRARI","FIAT","FORD","GINETTA","GME","HOMMELL","HONDA","HUMMER","HYUNDAI","INFINITI","ISUZU","IVECO","JAGUAR","JDM SIMPA","JEEP","KIA","KTM","LADA","LAMBORGHINI","LANCIA","LAND ROVER","LEXUS","LIGIER","LOTUS","MAHINDRA","MASERATI","MATRA","MAYBACH","MAZDA","MCLAREN","MEGA","MERCEDES","MERCEDES-AMG","MEV","MG","MIA ELECTRIC","MINI","MITSUBISHI","MORGAN","NISSAN","NOUN ELECTRIC","OPEL","PEUGEOT","PGO","PIAGGIO","PORSCHE","RENAULT","ROLLS ROYCE","ROVER","SAAB","SANTANA","SEAT","SECMA","SKODA","SMART","SOVAMAG","SSANGYONG","SUBARU","SUZUKI","TESLA","THINK","TOYOTA","TRIUMPH","TVR","VOLKSWAGEN","VOLTEIS","VOLVO","WIESMANN","XINYANG"];
 
 const {getBrands} = require('node-car-api');
 const {getModels} = require('node-car-api');
@@ -20,63 +18,44 @@ fs.appendFile(path, myJSON, function(err) {
     });
 }
 
-
+// get ll the brands and store it to json file 
 async function Get_Brands(){
  Brands = await getBrands();
+ var myJSON = JSON.stringify(Brands);
+ Store('output/brands.json',myJSON);
 }
 
-
-
-
-//Get_Brands();
-/*
-
-function Get_Test(path){
-	fs.readFile(path, 'utf8', function (err, data) {
-	  if (err) throw err;
-	  Brands = JSON.parse(data);
-      Brands.forEach(function(y) 
-        { 
-          console.log(y);
-           Get_Models(y);
-        });
-        
-	});
- 
-}
-*/
-
-
-
+// get all the models accroding a brand and store it to json file 
 async function Get_Models(brand){
 const models = await getModels(brand);
 var myJSON = JSON.stringify(models);
-Store('models.json',myJSON);
+Store('./output/models.json',myJSON);
 console.log(models);
 
 }
-
+// get all the records acorfing a brand and store it to json file 
 async function Get_Records(brand){
 const records = await getRecords(brand);
 var myJSON = JSON.stringify(records);
-   Store('records.json',myJSON);
+   Store('./output/records.json',myJSON);
 console.log(records);
 }
 
 
+// excecute the function to print the model and record according a brand
 function Print(){
-  Brands.forEach(function(y) 
-        { 
-          console.log(y);
-          Get_Models(y);
-        });
+  essai.forEach(function(y) { 
+    console.log(y);
+    Get_Models(y);
+    Get_Records(y);
+});
 }
 
 function Main (){
     
-   Get_Brands();
-   setTimeout(Print,30000);
-    //Get_Test('brands.json');
+   //Get_Brands();
+   //setTimeout(Print,30000);
+    Print();
 }
 
 Main();
