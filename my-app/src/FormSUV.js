@@ -2,43 +2,48 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button, Form, FormGroup, Label, Input, FormText,Col }  from 'reactstrap';
-import data from './brands.json';
-import dataModel from './models.json';
+import Brand from './brands.json';
+import Model from './models.json';
 
-export default class Example extends React.Component {
+export default class FormSUV extends React.Component {
   render() {
+       let className = 'form';
+  if (this.props.isActive) {
+    className += ' form-active';
+  }
     return (
         <Form inline>
         
         <FormGroup row>
-        <Col sm={10}>
-          <Input placeholder=" BRANDS " bsSize="lg" />
-        <Input type="select" bsSize="lg">
+          <Label for="brand" sm={5}>Brand</Label>
+          <Col sm={10}>
+            <Input type="select" bsSize="lg">
            {
-          data.map(function(brand){
+            Brand.map(function(brand){
             return <option>{brand}}</option>;
           })
         }
         </Input>
-           </Col>
+          </Col>
         </FormGroup>
         {' '}
-        
-    <FormGroup row>
-        <Col sm={10}>
-          <Input placeholder=" MODELS " bsSize="lg" />
-        <Input type="select" bsSize="lg">
+
+
+        <FormGroup row>
+          <Label for="model" sm={5}>Model</Label>
+          <Col sm={10}>
+            <Input type="select" bsSize="lg">
            {
-          dataModel.map(function(model){
+            Model.map(function(model){
             return <option>{model.model}</option>;
           })
         }
         </Input>
-           </Col>
+          </Col>
         </FormGroup>
         {' '}
-
-        <Button size="lg">Submit</Button>
+        
+            <Button size="lg">SEARCH</Button>
       
         </Form>
     );

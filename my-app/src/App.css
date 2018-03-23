@@ -8,10 +8,12 @@
 }
 
 .App-header {
-  background-color: #222;
+  #background-color: #222;
   height: 150px;
   padding: 20px;
   color: white;
+    background: #1D1D1D url(./doc/header.png) repeat;
+    
 }
 
 .App-title {
@@ -35,7 +37,7 @@ html
 
 body
 { font: normal .80em 'trebuchet ms', arial, sans-serif;
-  background: #F0EFE2 url(/doc/background.png) repeat;
+  background: #F0EFE2 url(./doc/background.png) repeat;
   color: #777;}
 
 p
@@ -117,7 +119,7 @@ ol li
   margin-right: auto;}
 
 #header
-{ background: #1D1D1D url(/doc/header.png) repeat;
+{ background: #1D1D1D url(./doc/header.png) repeat;
   #height: 240px;}
 
 #logo
@@ -196,7 +198,7 @@ ul#menu li.selected a
   overflow: hidden;
   margin: 0 auto 0 auto;
   padding: 20px 24px 20px 37px;
-  background: #FFF url(/doc/background.png) repeat;} 
+  background: #FFF url(./doc/background.png) repeat;} 
 
 .sidebar
 { float: right;
@@ -215,7 +217,7 @@ ul#menu li.selected a
 .sidebar li a, .sidebar li a:hover
 { padding: 0 0 0 40px;
   display: block;
-  background: transparent url(/doc/link.png) no-repeat left center;} 
+  background: transparent url(./doc/link.png) no-repeat left center;} 
 
 .sidebar li a.selected
 { color: #444;
@@ -231,7 +233,7 @@ ul#menu li.selected a
 
 #content ul li
 { list-style-type: none;
-  background: url(/doc/bullet.png) no-repeat;
+  background: url(./doc/bullet.png) no-repeat;
   margin: 0 0 6px 0; 
   padding: 0 0 4px 25px;
   line-height: 1.5em;}
@@ -242,7 +244,7 @@ ul#menu li.selected a
   font: normal 100% 'lucida sans unicode', arial, sans-serif;
   padding: 0px 0 5px 0;
   text-align: center; 
-  background: #1D1D1D url(/doc/header.png) repeat;
+  background: #1D1D1D url(./doc/header.png) repeat;
   color: #FFF;
   text-transform: uppercase;
   letter-spacing: 0.1em;
