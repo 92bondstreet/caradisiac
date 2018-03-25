@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/ArthurThomasset/caradisiac#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "elasticsearch": "^14.2.1",
+    "express": "^4.16.3",
     "node-car-api": "git+https://github.com/92bondstreet/node-car-api.git"
   }
 }
